@@ -1,0 +1,267 @@
+:root {
+	--primary-color: #333; /* dark grey */
+	--secondary-color: #00d6d3; /* dark grey */
+	--background-color: #f5f5f5;
+	--card-background: #fff;
+}
+
+/* Print settings for A4 pages */
+@page {
+	margin: 20mm;
+}
+
+/* Global Reset & Container */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--background-color);
+	font-family: "Montserrat", sans-serif;
+	color: var(--primary-color);
+	/* max-width: 1200px;
+  margin: 20px auto; */
+	padding: 6rem;
+	line-height: 1.6;
+}
+/* Markdown heading mapping */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Montserrat", sans-serif;
+	color: var(--primary-color);
+}
+
+h2 {
+	width: 100%;
+	font-size: 2rem;
+	font-weight: 200;
+	margin-bottom: 1rem;
+	margin-top: 2rem;
+	border-bottom: 1px solid var(--secondary-color);
+}
+h3 {
+	color: var(--secondary-color);
+	font-weight: 200;
+}
+.bold-1 {
+	font-weight: bold;
+}
+
+ul {
+	list-style-type: disc; /* main bullet: filled circle */
+	padding: 0;
+}
+
+ul ul {
+	list-style-type: circle; /* sub bullet: hollow circle */
+	margin-left: 1.5rem;
+	padding: 0;
+}
+
+/* Header styles */
+header {
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+#nutritionist-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+#nutritionist-logo {
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+}
+
+#nutritionist-name {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+header h1 {
+	font-size: 2rem;
+	margin-bottom: 10px;
+	color: var(--primary-color);
+}
+
+#urlInputContainer {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+#urlInputContainer input {
+	flex: 1;
+	padding: 8px;
+	border: 1px solid var(--primary-color);
+	border-radius: 4px;
+}
+
+#urlInputContainer button {
+	padding: 8px 12px;
+	border: 1px solid var(--primary-color);
+	background: none;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: background 0.2s;
+}
+
+#urlInputContainer button:hover {
+	background: var(--primary-color);
+	color: #fff;
+}
+
+/* Intro section styling – now styled differently from a card */
+#intro {
+	margin-bottom: 30px;
+	padding: 15px;
+	background: transparent;
+}
+
+/* Cards section container */
+#cards {
+	display: block;
+}
+
+/* Meal Section styling */
+.meal-section {
+	margin-bottom: 40px;
+	max-height: fit-content;
+}
+
+/* Meal header with toggle icon */
+.meal-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.8rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	cursor: pointer;
+}
+
+/* Container for dish cards */
+.dish-cards-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	transition: max-height 0.5s ease;
+	overflow: visible;
+}
+
+/* Dish Card styling with skeuomorphic dual-shadow effect */
+.dish-card {
+	background: var(--card-background);
+	border-radius: 8px;
+	padding: 2rem;
+	flex: 1 1 calc(33.333% - 1rem);
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1),
+		-3px -3px 6px rgba(255, 255, 255, 0.7);
+	transition: transform 0.2s, box-shadow 0.2s;
+	max-width: calc(50% - 1rem);
+}
+
+.dish-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15),
+		-4px -4px 8px rgba(255, 255, 255, 0.8);
+	cursor: pointer;
+}
+
+.dish-card h3 {
+	font-size: 1.4rem;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+}
+
+/* Fix bullet points */
+ul {
+	list-style-type: disc;
+	padding-left: 20px;
+	margin-bottom: 10px;
+}
+
+li {
+	margin-bottom: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.dish-card {
+		flex: 1 1 100%;
+		max-width: 100%;
+	}
+}
+
+/* Print media adjustments */
+@media print {
+	body {
+		margin: 20mm auto;
+		max-width: 100%;
+	}
+	.dish-cards-container,
+	.dish-card,
+	#intro {
+		transition: none !important;
+	}
+}
+
+@media print {
+  /* Global adjustments for print */
+  body {
+    background-color: white !important;
+    color: #000;
+    font-size: 7pt; /* smaller base font size */
+  }
+  
+  header {
+    margin-bottom: 10px;
+  }
+   h1 {
+    font-size: 9pt; /* reduced header size */
+  }
+  h2 {
+    font-size: 9pt;
+  }
+  h3 {
+    font-size: 9pt;
+  }
+  
+  /* Use flex layout for the dish cards container */
+  .dish-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* space between cards */
+  }
+  
+  /* Arrange dish cards in 3 columns using flex-basis */
+  .dish-card {
+    flex: 0 0 calc(33.33% - 10px);
+    box-shadow: none !important; /* remove shadows */
+    border: 1px solid #ccc !important; /* 1px grey border */
+    background-color: white;
+    padding: 5px; /* reduce padding if needed */
+    margin-bottom: 10px;
+  }
+  
+  /* Disable any transitions for print */
+  * {
+    transition: none !important;
+  }
+  
+  @page {
+    margin: 10mm;
+  }
+}

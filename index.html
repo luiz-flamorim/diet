@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Dieta - Planejador Moderno</title>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<div id="nutritionist-header">
+				<img src="logo.png" alt="Logo" id="nutritionist-logo" />
+				<span id="nutritionist-name">Sarah Connor</span>
+			</div>
+			<h1>Dieta - Planejador Moderno</h1>
+			<div id="urlInputContainer">
+				<input
+					type="text"
+					id="padUrlInput"
+					placeholder="Digite a URL do pad (ex: https://pad.vvvvvvaria.org/Dieta)" />
+				<button id="atualizarButton">atualizar</button>
+			</div>
+		</header>
+
+		<!-- Intro section for the initial paragraph (blockquote converted to a plain paragraph) -->
+		<section id="intro"></section>
+
+		<!-- Cards section for meals and dish cards -->
+		<section id="cards"></section>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
