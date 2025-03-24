@@ -15,7 +15,7 @@
 				<img src="logo.png" alt="Logo" id="nutritionist-logo" />
 				<span id="nutritionist-name">Sarah Connor</span>
 			</div>
-			<h1>Dieta - Planejador Moderno</h1>
+			<h1>Planejador de Dieta</h1>
 			<div id="urlInputContainer">
 				<input
 					type="text"
@@ -25,13 +25,13 @@
 			</div>
 		</header>
 
-		<!-- Intro section for the initial paragraph (blockquote converted to a plain paragraph) -->
-		<section id="intro"></section>
+		<div id="tabs"></div>
 
 		<!-- Cards section for meals and dish cards -->
 		<section id="cards"></section>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
-		<script src="main.js"></script>
+		<script type="module" src="./js/parse-data.js"></script>
+		<script type="module" src="./js/render-diet.js"></script>
 	</body>
 </html>
