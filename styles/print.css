@@ -1,0 +1,42 @@
+@media print {
+	body {
+		background-color: white !important;
+		color: #000;
+		font-size: 7pt;
+		margin: 20mm auto;
+		max-width: 100%;
+	}
+
+	header {
+		margin-bottom: 10px;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-size: 9pt;
+	}
+
+	.dish-cards-container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+
+	.dish-card {
+		flex: 0 0 calc(33.33% - 10px);
+		box-shadow: none !important;
+		border: 1px solid #ccc !important;
+		background-color: white;
+		padding: 5px;
+		margin-bottom: 10px;
+	}
+
+	* {
+		transition: none !important;
+	}
+
+	@page {
+		margin: 10mm;
+	}
+}
